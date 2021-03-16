@@ -34,8 +34,9 @@ const getProfile = (userData) => {
   let sc = document.getElementsByClassName('pv-profile-section-pager');
   let tmpArray = [];
   for(let x = 0; x < sc.length; x++){
+    let li = sc[0].getElementsByTagName('ul')[0].children;
     let header = sc[x].getElementsByTagName('header')[0].innerText;
-    var workArray = [];
+    let workArray = [];
     if(header.toLowerCase().replace(/[^a-z]/gi,'').match('experiencia')) {
       for(let i = 0; i < li.length; i++){
           // company details
