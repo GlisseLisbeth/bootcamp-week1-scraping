@@ -64,7 +64,6 @@ const scrapingProfile = () => {
       }
     }
     let sc = document.getElementsByClassName('pv-profile-section-pager');
-    let tmpArray = [];
     for(let x = 0; x < sc.length; x++){
       let li = sc[x].getElementsByTagName('ul')[0].children;
       let header = sc[x].getElementsByTagName('header')[0].innerText;
@@ -141,7 +140,7 @@ const scrapingProfile = () => {
                 }
             }
         }
-        tmpArray.push({"work":workArray});
+        userData.push({"work":workArray});
       
       }
       else if(header.toLowerCase().replace(/[^a-z]/gi,'').match('educacin')){
@@ -173,11 +172,10 @@ const scrapingProfile = () => {
             };
             educObj.push(scObj);
         }
-        tmpArray.push({"education":educObj});
+        userData.push({"education":educObj});
       }
     }
-    console.log(JSON.stringify(tmpArray));
-    userData.push(tmpArray);
+    console.log(JSON.stringify(userData));
     console.log(userData);
   });
 };
